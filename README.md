@@ -1,6 +1,8 @@
 # FreeBreathing
 
-Web de respiración guiada en HTML, CSS y JavaScript sin frameworks.
+Web de respiración guiada en HTML, CSS y JavaScript sin frameworks. 
+
+https://butterfly-dreams.itch.io/freebreathing
 
 ## Cómo abrir
 

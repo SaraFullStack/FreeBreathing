@@ -1,0 +1,28 @@
+{
+  "categorias": [
+    { "id": "equilibrio", "nombre": "Equilibrio natural", "descripcion": "El mismo tiempo para inhalar y exhalar. Ideal para encontrar un ritmo cómodo.", "icono": "balance" },
+    { "id": "calma", "nombre": "Calma profunda", "descripcion": "Exhalaciones más largas para ralentizar el ritmo suavemente.", "icono": "moon" },
+    { "id": "enfoque", "nombre": "Pausa y concentración", "descripcion": "Con retenciones conscientes o pausas entre ciclos.", "icono": "focus" },
+    { "id": "energia", "nombre": "Activación suave", "descripcion": "Una inhalación más larga que la exhalación.", "icono": "sun" }
+  ],
+  "programas": [
+    { "id": "3030", "nombre": "Inicio ligero", "categoria": "equilibrio", "descripcion": "Un ritmo sencillo y breve.", "inhalar": 3, "sostener": 0, "exhalar": 3, "pausa": 0 },
+    { "id": "5050", "nombre": "Respiración serena", "categoria": "equilibrio", "descripcion": "Una cadencia natural y simétrica.", "inhalar": 5, "sostener": 0, "exhalar": 5, "pausa": 0 },
+    { "id": "7070", "nombre": "Ritmo pausado", "categoria": "equilibrio", "descripcion": "Más tiempo en cada respiración.", "inhalar": 7, "sostener": 0, "exhalar": 7, "pausa": 0 },
+
+    { "id": "4060", "nombre": "Calma suave", "categoria": "calma", "descripcion": "Una exhalación ligeramente más extensa.", "inhalar": 4, "sostener": 0, "exhalar": 6, "pausa": 0 },
+    { "id": "5070", "nombre": "Soltar tensión", "categoria": "calma", "descripcion": "Deja que el aire salga despacio.", "inhalar": 5, "sostener": 0, "exhalar": 7, "pausa": 0 },
+    { "id": "4070", "nombre": "Exhalación tranquila", "categoria": "calma", "descripcion": "Respira con atención al final de cada ciclo.", "inhalar": 4, "sostener": 0, "exhalar": 7, "pausa": 0 },
+    { "id": "5080", "nombre": "Desconexión", "categoria": "calma", "descripcion": "Más espacio para relajarte al exhalar.", "inhalar": 5, "sostener": 0, "exhalar": 8, "pausa": 0 },
+    { "id": "4080", "nombre": "Exhalación lenta", "categoria": "calma", "descripcion": "Exhala durante el doble de la inhalación.", "inhalar": 4, "sostener": 0, "exhalar": 8, "pausa": 0 },
+    { "id": "50100", "nombre": "Calma extendida", "categoria": "calma", "descripcion": "Una exhalación larga, solo si te resulta cómoda.", "inhalar": 5, "sostener": 0, "exhalar": 10, "pausa": 0 },
+
+    { "id": "5250", "nombre": "Pausa consciente", "categoria": "enfoque", "descripcion": "Un instante para sostener después de inhalar.", "inhalar": 5, "sostener": 2, "exhalar": 5, "pausa": 0 },
+    { "id": "4480", "nombre": "Atención y calma", "categoria": "enfoque", "descripcion": "Sostén suavemente antes de una exhalación lenta.", "inhalar": 4, "sostener": 4, "exhalar": 8, "pausa": 0 },
+    { "id": "4780", "nombre": "Ritmo 4 · 7 · 8", "categoria": "enfoque", "descripcion": "Retención prolongada; no fuerces la respiración.", "inhalar": 4, "sostener": 7, "exhalar": 8, "pausa": 0 },
+    { "id": "4444", "nombre": "Respiración cuadrada", "categoria": "enfoque", "descripcion": "Cuatro fases iguales y constantes.", "inhalar": 4, "sostener": 4, "exhalar": 4, "pausa": 4 },
+    { "id": "6066", "nombre": "Pausa al soltar", "categoria": "enfoque", "descripcion": "Descansa brevemente tras exhalar.", "inhalar": 6, "sostener": 0, "exhalar": 6, "pausa": 6 },
+
+    { "id": "6040", "nombre": "Respiración activa", "categoria": "energia", "descripcion": "Una inspiración ligeramente más larga.", "inhalar": 6, "sostener": 0, "exhalar": 4, "pausa": 0 }
+  ]
+}

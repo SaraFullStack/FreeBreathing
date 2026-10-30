@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111d1a">
+  <meta name="description" content="FreeBreathing: meditaciones de respiración con guía visual, naturaleza y sonidos suaves. Personaliza tu ritmo.">
+  <title>FreeBreathing — Un momento para respirar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background" aria-hidden="true">
+    <video id="backgroundVideo" autoplay muted loop playsinline preload="metadata" poster="assets/poster.jpg">
+      <source src="assets/naturaleza.mp4" type="video/mp4">
+    </video>
+    <div class="background-shade"></div>
+  </div>
+  <div class="site-shell">
+    <header class="topbar">
+      <button class="brand" id="homeLogo" aria-label="Ir al inicio de FreeBreathing">
+        <svg class="brand-mark" viewBox="0 0 46 46" fill="none" aria-hidden="true"><circle cx="23" cy="23" r="22" stroke="currentColor" stroke-opacity=".65"/><path d="M7 26h6l5-11 9 18 5-11h7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><strong>Free</strong>Meditations</span>
+      </button>
+      <div class="top-actions"><a class="creator-chip" href="https://butterfly-dreams.itch.io/" target="_blank" rel="noopener noreferrer" title="Butterfly Dreams — itch.io">Butterfly Dreams ↗</a><div class="language-switch" role="group" aria-label="Language / Idioma"><button id="langEs" class="language-button is-active" type="button" aria-pressed="true">ES</button><button id="langEn" class="language-button" type="button" aria-pressed="false">EN</button></div>
+        <button class="utility" id="musicToggle" aria-pressed="true" title="Activar o desactivar la música"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><span id="musicToggleLabel">Música activada</span></button>
+        <button class="utility" id="voiceToggle" aria-pressed="true" title="Activar o desactivar la guía de voz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5ZM15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="voiceToggleLabel">Voz activada</span></button>
+        <button class="utility" id="bellToggle" aria-pressed="true" title="Activar o desactivar las campanadas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9ZM10 21h4" stroke-linecap="round"/></svg><span id="bellToggleLabel">Cuenco activado</span></button>
+      </div>
+    </header>
+
+    <main>
+      <div id="homeView" class="view">
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span> TU ESPACIO DE CALMA</div>
+            <h1>Un momento<br>para <em>respirar.</em></h1>
+            <p>Deja que la naturaleza te acompañe. Encuentra tu ritmo con una guía visual, música relajante y pequeños sonidos que marcan cada cambio.</p>
+            <div class="hero-actions">
+              <button class="button button-primary" id="featuredStart">Empezar a respirar <span aria-hidden="true">↗</span></button>
+              <button class="button button-glass" id="customOpen">Crear mi ritmo <span aria-hidden="true">+</span></button>
+            </div>
+            <div class="hero-note"><span class="breathing-dot" aria-hidden="true"></span> Sin prisa. A tu manera.</div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+            <div class="center-orb"><span>inhala<br><small>exhala</small></span></div>
+            <div class="floating-note">Sigue tu propio ritmo <span>✦</span></div>
+          </div>
+        </section>
+
+        <section class="programs-area" id="programsArea" aria-labelledby="programsHeading">
+          <div class="section-heading">
+            <div><div class="eyebrow small">EXPLORA TUS RITMOS</div><h2 id="programsHeading">Respiraciones guiadas<span class="punctuation">.</span></h2><p>Escoge un patrón de respiración para empezar.</p></div>
+            <button class="text-action" id="customOpenSecond">Personalizar tiempos <span aria-hidden="true">↗</span></button>
+          </div>
+          <div id="programGroups" class="program-groups"><p class="loading-text">Cargando ejercicios…</p></div>
+        </section>
+        <footer class="footer"><span>FreeBreathing © 2026 · <a class="creator-link" href="https://butterfly-dreams.itch.io/" target="_blank" rel="noopener noreferrer">Butterfly Dreams ↗</a></span><span>Respira con suavidad. Si sientes mareo o incomodidad, vuelve a tu ritmo habitual.</span></footer>
+      </div>
+
+      <div id="sessionView" class="view is-hidden" aria-hidden="true">
+        <section class="session">
+          <div class="session-top"><button class="back-link" id="backHome"><span aria-hidden="true">←</span> Volver a los ejercicios</button><div class="session-status"><span class="status-dot"></span> <span id="sessionStatus">LISTO PARA EMPEZAR</span></div></div>
+          <div class="session-header"><div class="eyebrow small">TU MOMENTO PRESENTE</div><h1 id="sessionTitle">Respiración serena</h1><p id="sessionDescription">Sigue la línea y respira sin forzar.</p><div class="sequence" id="sequence" aria-label="Duración de las fases"></div></div>
+          <div class="breath-stage">
+            <div class="stage-top"><span>GUÍA DE RESPIRACIÓN</span><span id="stageCycle">CICLO 01</span></div>
+            <div class="phase-area" aria-live="off"><div class="phase-label" id="phaseLabel" aria-live="polite">Prepárate</div><div class="phase-seconds"><span id="phaseSeconds">—</span><span class="unit" id="phaseUnit">segundos</span></div></div>
+            <div class="chart-container">
+              <svg id="breathChart" viewBox="0 0 1000 320" preserveAspectRatio="none" role="img" aria-label="Línea de respiración: sube al inhalar, se mantiene al sostener, baja al exhalar y descansa abajo">
+                <defs><linearGradient id="chartArea" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f2d8b5" stop-opacity=".21"/><stop offset="1" stop-color="#f2d8b5" stop-opacity="0"/></linearGradient><filter id="lineGlow" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="6"/></filter></defs>
+                <path id="chartFill" fill="url(#chartArea)" d=""/>
+                <path id="chartGlow" class="chart-glow" d="" fill="none"/>
+                <path id="chartPath" class="chart-path" d="" fill="none"/>
+                <circle id="chartMarkerHalo" cx="30" cy="265" r="24" fill="#fff4df" opacity=".14"/>
+                <circle id="chartMarker" cx="30" cy="265" r="14" fill="#ffdfb8" stroke="#fff9eb" stroke-width="3"/>
+              </svg>
+            </div>
+            <div class="chart-footer"><span>INHALA <span aria-hidden="true">↗</span></span><span>SOSTÉN <span aria-hidden="true">─</span></span><span>EXHALA <span aria-hidden="true">↘</span></span><span>PAUSA <span aria-hidden="true">─</span></span></div>
+          </div>
+          <div class="session-bottom">
+            <div class="time-stats"><div><span class="stat-kicker">TIEMPO</span><strong id="elapsedTime">00:00</strong></div><div><span class="stat-kicker">RESPIRACIONES</span><strong id="cycleCount">0</strong></div></div>
+            <div class="session-controls"><button class="button button-primary session-main-button" id="playPause">Comenzar <span aria-hidden="true" id="playIcon">▶</span></button><button class="square-button" id="restartButton" title="Reiniciar sesión" aria-label="Reiniciar sesión">↺</button></div>
+            <div class="duration-setting"><label for="sessionDuration">DURACIÓN</label><select id="sessionDuration"><option value="3">3 min</option><option value="5" selected>5 min</option><option value="10">10 min</option><option value="15">15 min</option><option value="20">20 min</option><option value="0">Sin límite</option></select></div>
+          </div>
+          <div class="sound-bar"><span>SONIDOS</span><label for="musicVolume">Música <input type="range" id="musicVolume" min="0" max="100" value="36" aria-label="Volumen de la música"></label><label for="bellVolume">Cuenco <input type="range" id="bellVolume" min="0" max="100" value="48" aria-label="Volumen del cuenco"></label></div>
+          <p class="session-footnote">Respira a un ritmo cómodo. Las pausas y exhalaciones largas son opcionales: interrumpe el ejercicio si te produce molestias.</p>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="customDialog" class="custom-dialog" aria-labelledby="customTitle">
+    <form id="customForm" class="custom-form">
+      <div class="dialog-header"><div><div class="eyebrow small">HAZLO TUYO</div><h2 id="customTitle">Tu propio ritmo<span class="punctuation">.</span></h2></div><button type="button" class="dialog-close" id="customClose" aria-label="Cerrar">×</button></div>
+      <p>Define la duración de cada fase en segundos. Introduce 0 para omitir una fase.</p>
+      <label class="name-field">Nombre del ejercicio<input id="customName" type="text" maxlength="46" placeholder="Mi respiración" value="Mi respiración" required></label>
+      <div class="custom-grid"><label>Inhalar<span class="field-tip">La línea sube</span><input id="customInhale" type="number" min="0" max="60" step="0.5" value="5" required></label><label>Sostener<span class="field-tip">Línea arriba</span><input id="customHold" type="number" min="0" max="60" step="0.5" value="0" required></label><label>Exhalar<span class="field-tip">La línea baja</span><input id="customExhale" type="number" min="0" max="60" step="0.5" value="5" required></label><label>Pausa<span class="field-tip">Línea abajo</span><input id="customRest" type="number" min="0" max="60" step="0.5" value="0" required></label></div>
+      <p id="customError" class="form-error" role="alert"></p>
+      <div class="dialog-actions"><button type="button" id="saveCustom" class="button button-glass">Guardar ritmo</button><button type="submit" class="button button-primary">Empezar <span aria-hidden="true">↗</span></button></div>
+      <div class="dialog-hint">Los ritmos guardados aparecen en tu pantalla de inicio, en este navegador.</div>
+    </form>
+  </dialog>
+  <audio id="ambientAudio" src="assets/ambiente.mp3" loop preload="none"></audio>
+  <script src="app.js" defer></script>
+</body>
+</html>
